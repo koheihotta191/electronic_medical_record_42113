@@ -1,0 +1,12 @@
+<h1>Maladies <a href="/diagnoses/new">(+ New Diagnosis)</a></h1>
+
+<nav>
+  <%=link_to 'Home', root_path%>
+</nav>
+
+
+<ul>
+  <% @diagnoses.each do |diagnosis| %>
+    <li><%=link_to diagnosis.diagnosis_name, diagnosis%></li>
+  <%end%>
+</ul>
