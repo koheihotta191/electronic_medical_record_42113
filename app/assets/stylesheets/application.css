@@ -1,3 +1,56 @@
+* {
+  box-sizing: border-box;
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: black;
+  display: inline-block;
+  transition: .5s ease;
+}
+a:hover {
+  text-decoration: underline;
+  color: cyan;
+}
+body{
+  background-color: #fff7c4;
+}
+.plus_button{
+  transition: 2s ease;
+}
+.plus_button:hover {
+  transform: rotate(1200deg);
+  text-decoration: none;
+}
+h1, h2{
+  text-align: center;
+
+}
+
+.census {
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  left: 200px;
+}
+.census2 {
+  margin: 0 auto;
+  position: relative;
+  left: 250px;
+}
+
+.maincontainer{
+  background-color: #fffeed;
+  font-family: 'Raleway', sans-serif;
+  width: 600px;
+  position: relative;
+  left: 550;
+  margin: 0 auto;
+  border: 5px solid black;
+}
+
+
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.

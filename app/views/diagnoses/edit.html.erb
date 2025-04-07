@@ -1,0 +1,9 @@
+<h2>Edit Diagnosis</h2>
+
+<ul>
+<%= form_for [@diagnosis] do |f| %>
+    <li><%= f.label :diagnosis_name %> <%= f.text_field :diagnosis_name %></li>
+    <li><%= f.label :icd_code %> <%= f.text_field :icd_code %></li>
+    <li><%= f.submit %></li>
+<% end %>
+</ul>

@@ -1,0 +1,26 @@
+<h1><%=@patient.name %></h1>
+
+<ul>
+  <li>MRN: <%= @patient.mrn %></li>
+  <li>Age:    <%= @patient.age %></li>
+  <li>Sex:    <%= @patient.sex %></li>
+  <li>Insurance:    <%= @patient.insurance %></li>
+  <li>Smoker Status:   <%= @patient.smoker %></li>
+  <li>Past Surgeries:   <%= @patient.surgery %></li>
+</ul>
+
+<h2>Past Medical History</h2>
+  <%= form_tag(add_diagnosis_patient_path(@patient)) do %>
+    <%=label_tag "Diagnosis" %>
+    <%= select_tag(:diagnosis_id, options_for_select(Diagnosis.all.map{|d| ["#{d.icd_code} - #{d.diagnosis_name}", d.id]}))%>
+    <%=submit_tag "Add Diagnosis"%>
+  <%end%>
+<ul>
+  <% @patient.diagnoses.each do |diagnosis| %>
+    <li><%=diagnosis.diagnosis_name%> - <%=diagnosis.icd_code%> </li>
+  <% end %>
+</ul>
+<h2><%=link_to 'Delete Patient', @patient, method: :delete%></h2>
+<h2><%=link_to 'Edit Patient', edit_patient_path%></h2>
+<h3><%=link_to 'More Diagnosis Options', diagnoses_path%></h3>
+<h3><%=link_to 'Home', root_path%></h3>

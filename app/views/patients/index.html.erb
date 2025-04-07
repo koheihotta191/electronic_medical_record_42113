@@ -1,0 +1,13 @@
+<h1>Welcome to Hand-Off!</h1>
+<div class="census2">
+  <%=link_to 'Diagnoses', diagnoses_path%>
+</div>
+
+<h2>Census <a href="/patients/new" class="plus_button">(+)</a></h2>
+
+<div class="census"><ul>
+  <% @patients.each do |patient| %>
+    <li><%=link_to patient.name, patient%></li>
+  <%end%>
+</ul>
+</div>

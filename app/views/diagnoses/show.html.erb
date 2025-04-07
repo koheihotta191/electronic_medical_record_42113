@@ -1,0 +1,21 @@
+<h1><%=@diagnosis.diagnosis_name%></h1>
+
+<nav>
+  <%=link_to 'Delete Diagnosis', @diagnosis, method: :delete%>
+  <%=link_to 'Edit Diagnosis', edit_diagnosis_path%>
+  <%=link_to 'Home', root_path%>
+
+</nav>
+
+<ul>
+  <%@diagnosis.patients.each do |patient|%>
+    <li><%= link_to patient.name, patient %></li>
+  <%end%>
+</ul>
+
+
+<h2>
+  <a href="https://en.wikipedia.org/wiki/<%=@diagnosis.diagnosis_name%>">More info</a>
+
+</h2>
+<footer><%=link_to 'Home', root_path%></footer>
